@@ -8,6 +8,8 @@ Welcome to JSONStruct
 
 JSONStruct is a simple web server/service that will translate your json document into valid [Go Language](http://golang.org) Struct.
 
+##### STILL UNDER DEVELOPMENT
+
 ### Hosted service?
 
 You can find this service alive at [JSONStruct Website](http://jsonstruct.com). This repo is just an open source in case you wish to extend it and do whatever you wish to do with it.
