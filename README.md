@@ -14,6 +14,13 @@ JSONStruct is a simple web server/service that will translate your json document
 
 You can find this service alive at [JSONStruct Website](http://jsonstruct.com). This repo is just an open source in case you wish to extend it and do whatever you wish to do with it.
 
+### Terminal usage?
+
+In addition to regular usage over site you can use following command to do it from terminal itself. 
+Yes, I have in plan to attach something shorter as this is just too long and even I am to lazy to write it.
+
+curl -s https://example.com/document.json | curl -s -X POST -H "Content-Type: application/json" -d @- http://jsonstruct.com/parse
+
 ### Getting Started
 
 #### Follow the guidelines to start extending JSONStruct application:
@@ -28,3 +35,14 @@ JSONStruct is built on top of [Revel Go Framework](http://revel.github.io) and w
 ### Contributing
 I encourage you to contribute to JSONStruct! Please check out the [Contributing to JSONStruct](https://github.com/0x19/jsonstruct/blob/master/CONTRIBUTING.md) for guidelines about how
 to proceed.
+
+
+### Thanks To
+
+On this way I would like to express my gratitude to those teams/people and above all let everyone knows from where did I grep my code :)
+
+[JSON To Struct](https://github.com/tmc/json-to-struct) -> Used logic from here but modified to make it fit JSONStruct needs!
+[Go Team](http://golang.org) -> Thanks for being awesome!
+[Angular.JS](https://angularjs.org/) -> Again, you're awesome!
+[UI-Ace](https://github.com/angular-ui/ui-ace) -> Thanks!
+[Ace](http://ajaxorg.github.io/ace/#nav=about) -> Thanks! Works like a charm!
