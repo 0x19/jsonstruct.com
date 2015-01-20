@@ -6,4 +6,4 @@ go:
   - tip
 
 script:
-	- revel test github.com/0x19/jsonstruct.com
+  - revel test github.com/0x19/jsonstruct.com
