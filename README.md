@@ -1,5 +1,4 @@
 [![License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)]()
-[![Build Status](https://travis-ci.org/0x19/jsonstruct.com.svg)](https://github.com/0x19/jsonstruct.com)
 [![Go 1.3 Ready](https://img.shields.io/badge/Go%201.3-Ready-green.svg?style=flat)]()
 [![Go 1.4 Ready](https://img.shields.io/badge/Go%201.4-Ready-green.svg?style=flat)]()
 
