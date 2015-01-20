@@ -7,7 +7,7 @@ go:
 
 install:
   - export PATH=$PATH:$HOME/gopath/bin
-  - go get -v github.com/revel/revel
+  - go get -v github.com/yext/revel/revel
   - go get -v github.com/0x19/gotostruct
 
 script:
