@@ -1,16 +1,43 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Application error</title>
-	</head>
-	<body>
-		{{if eq .RunMode "dev"}}
-		{{template "errors/500-dev.html" .}}
-		{{else}}
-		<h1>Oops, an error occured</h1>
-		<p>
-			This exception has been logged.
-		</p>
-		{{end}}
-	</body>
-</html>
+[[set . "title" "JSONStruct - Internal Server Error"]]
+
+[[template "header.html" .]]
+<main class="container-fluid row">
+	<header class="col-md-12">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-3 col-title">
+					<a href="/" title="JSONStruct - Convert any JSON object into Go Struct"><strong>JSON</strong>Struct</a>&nbsp;<small>v 1.0.0</small>
+					<iframe src="//www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.jsonstruct.com&amp;layout=button_count&amp;appId=405024859650957" scrolling="no" frameborder="0" style="border:none; overflow:hidden;height:20px;margin-top:5px;" allowTransparency="true"></iframe>
+				</div>
+				<div class="col-lg-1 pull-right text-right fork-separator">&nbsp;</div>
+
+				<div class="col-lg-7 pull-right text-right social-top-col">
+
+					<div class="input-group col-lg-4 terminal-input">
+					  <div class="input-group-addon">terminal example</div>
+					  <input type="text" class="form-control" id="exampleInputAmount" value='curl -s http://www.jsonstruct.com/example.json | curl -s -X POST -H "Content-Type: application/json" -d @- http://www.jsonstruct.com/parse' readonly />
+					</div>
+
+					<iframe src="https://ghbtns.com/github-btn.html?user=0x19&repo=jsonstruct.com&type=follow&count=true&size=large"
+  					allowtransparency="true" frameborder="0" scrolling="0" width="160" height="30"></iframe>
+					<iframe src="https://ghbtns.com/github-btn.html?user=0x19&repo=jsonstruct.com&type=watch&count=true&size=large"
+					  allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<article class="col-md-12 error-page text-center">
+		<br /><br /><br /><br /><br />
+		<h1>Internal <strong>Server</strong> Error</h1>
+		<p>Page could not be displayed due to internal server error. Please create ticket @ github so that we can resolve it. Thank You!</p>
+		<br />
+		<a href="/" title="JSONStruct - Translate any JSON object into Go Struct" class="btn btn-lg btn-primary">Go Home</a>
+		<br /><br /><br /><br /><br />
+	</article>
+
+	<footer class="col-md-12">
+		<p>&copy; 2015 <a href="http://www.neviovesic.com">Nevio Vesic</a> <br /> Licensed under <a href="https://github.com/0x19/jsonstruct.com/blob/master/LICENSE">MIT License</a>
+	</footer>
+</main>
+[[template "footer.html" .]]

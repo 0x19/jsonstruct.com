@@ -40,6 +40,25 @@ header {
 
 }
 
+article {
+	&.error-page {
+		h1{
+			font-size:3em;
+			font-weight: 100;
+
+			strong{
+				font-weight: 300;
+			}
+		}
+
+		p{
+			font-size: 1.2em;
+			color:#333;
+			font-weight: 100;
+		}
+	}
+}
+
 aside {
 	background: transparent url('/public/img/gopher.jpg') 0 0 no-repeat;
 	background-position:bottom center;
