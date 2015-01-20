@@ -1,17 +1,75 @@
 <!DOCTYPE html>
+<html lang="en" ng-app="JSONStruct" itemscope itemtype="http://schema.org/Person">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
+  <title>[[.title]]</title>
 
-<html>
-  <head>
-    <title>{{.title}}</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" type="text/css" href="/public/css/bootstrap.css">
-    <link rel="shortcut icon" type="image/png" href="/public/img/favicon.png">
-    <script src="/public/js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
-    {{range .moreStyles}}
-      <link rel="stylesheet" type="text/css" href="/public/{{.}}">
-    {{end}}
-    {{range .moreScripts}}
-      <script src="/public/{{.}}" type="text/javascript" charset="utf-8"></script>
-    {{end}}
-  </head>
-  <body>
+  <meta property="og:title" content="[[.title]]" />
+  <meta name="twitter:title" content="[[.title]]" />
+
+  <meta name="author" content="Nevio Vesic" />
+
+  <meta name="description" content="[[.description]]" />
+  <meta property="og:description" content="[[.description]]" />
+  <meta name="twitter:description" content="[[.description]]" />
+
+  <meta name="keywords" content="[[.keywords]]" />
+
+  <meta name="twitter:card" content="summary">
+  <meta property="og:type" content="website" />
+
+  <meta name="revisit-after" content="10 days" />
+  <meta name="distribution" content="web" />
+  <meta name="robots" content="INDEX, FOLLOW" />
+
+  <meta itemprop="name" content="Nevio Vesic" />
+  <meta itemprop="description" content="Works at TelTech Systems as Senior Software Engineer. Lives in Rijeka, Croatia." />
+
+  <link rel="canonical" href="http://www.jsonstruct.com/" />
+  <meta property="og:url" content="http://www.jsonstruct.com/">
+  <meta name="twitter:url" content="http://www.jsonstruct.com/">
+  <meta itemprop="url" content="http://www.jsonstruct.com/">
+
+  <link rel="author" href="https://plus.google.com/112805182312103136687/"/>
+  <link rel="publisher" href="https://plus.google.com/112805182312103136687/"/>
+
+  <meta name="twitter:image" content="http://www.jsonstruct.com/public/img/gopher.jpg" />
+  <meta property="og:image" content="http://www.jsonstruct.comm/public/img/gopher.jpg" />
+  <meta itemprop="image" content="http://www.jsonstruct.com/public/img/gopher.jpg" />
+
+  <meta property="fb:admins" content="571869360">
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+
+  <!-- Our precious site stylesheets :) -->
+  <link href="/public/stylesheets/application.css" rel="stylesheet">
+  <link href="/public/components/google-code-prettify/src/prettify.css" rel="stylesheet">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  [[raw `<!--[if IE]>`]]
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  [[raw `<![endif]-->`]]
+
+  <!-- Including AngularJS Dependencies -->
+  <script type="text/javascript" src="/public/components/ace-builds/src-min-noconflict/ace.js"></script>
+  <script type="text/javascript" src="/public/components/ace-builds/src-min-noconflict/ext-language_tools.js"></script>
+  <script type="text/javascript" src="/public/components/angularjs/angular.min.js"></script>
+  <script type="text/javascript" src="/public/components/angular-ui-ace/ui-ace.js"></script>
+  <script type="text/javascript" src="/public/components/google-code-prettify/src/prettify.js"></script>
+
+  <!-- Including Base Application -->
+  <script type="text/javascript" src="/public/js/application.js"></script>
+  <script type="text/javascript" src="/public/js/controllers.js"></script>
+
+  <!-- Touch Icons - iOS and Android 2.1+ 180x180 pixels in size. --> 
+  <link rel="apple-touch-icon-precomposed" href="/public/img/favicon.png" />
+
+  <!-- Firefox, Chrome, Safari, IE 11+ and Opera. 196x196 pixels in size. -->
+  <link rel="icon" href="/public/img/favicon.png" />
+</head>
+<body>

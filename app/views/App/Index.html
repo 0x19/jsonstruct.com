@@ -1,23 +1,66 @@
-{{set . "title" "Home"}}
-{{template "header.html" .}}
+[[template "header.html" .]]
+<main class="container-fluid row" ng-controller="EditorCtrl">
+	<div class="alert alert-warning alert-dismissible" role="alert" ng-show="alertAvailable" ng-class="{'alert-warning': alertType == 'warning', 'alert-danger': alertType == 'error'}">
+	  <button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="dismissAlert()"><span aria-hidden="true">&times;</span></button>
+	  <strong ng-bind="alertTitle">Uh Oh!</strong> <span ng-bind="alertMessage">Please type down some JSON in order to be able generate Go Struct.</span>
+	</div>
 
-<header class="hero-unit" style="background-color:#A9F16C">
-  <div class="container">
-    <div class="row">
-      <div class="hero-text">
-        <h1>It works!</h1>
-        <p></p>
-      </div>
-    </div>
-  </div>
-</header>
+	<header class="col-md-12">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-3 col-title">
+					<a href="/" title="JSONStruct - Convert any JSON object into Go Struct"><strong>JSON</strong>Struct</a>&nbsp;<small>v 1.0.0</small>
+					<iframe src="//www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.jsonstruct.com&amp;layout=button_count&amp;appId=405024859650957" scrolling="no" frameborder="0" style="border:none; overflow:hidden;height:20px;margin-top:5px;" allowTransparency="true"></iframe>
+				</div>
+				<div class="col-lg-1 pull-right text-right fork-separator">&nbsp;</div>
 
-<div class="container">
-  <div class="row">
-    <div class="span6">
-      {{template "flash.html" .}}
-    </div>
-  </div>
-</div>
+				<div class="col-lg-7 pull-right text-right social-top-col">
 
-{{template "footer.html" .}}
+					<div class="input-group col-lg-4 terminal-input">
+					  <div class="input-group-addon">terminal example</div>
+					  <input type="text" class="form-control" id="exampleInputAmount" value='curl -s http://www.jsonstruct.com/example.json | curl -s -X POST -H "Content-Type: application/json" -d @- http://www.jsonstruct.com/parse' readonly />
+					</div>
+
+					<iframe src="https://ghbtns.com/github-btn.html?user=0x19&repo=jsonstruct.com&type=follow&count=true&size=large"
+  					allowtransparency="true" frameborder="0" scrolling="0" width="160" height="30"></iframe>
+					<iframe src="https://ghbtns.com/github-btn.html?user=0x19&repo=jsonstruct.com&type=watch&count=true&size=large"
+					  allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<article class="col-md-8 editor-json">
+		<div ui-ace="{useWrapMode : true, showGutter: true, theme:'chrome', mode: 'json', firstLineNumber: 1, onLoad: aceLoaded, onChange: aceChanged, require: ['ace/ext/language_tools'], advanced: { enableSnippets: true, enableBasicAutocompletion: true, enableLiveAutocompletion: true } }"></div>
+	</article>
+	<aside class="col-md-4">
+		<h1>Welcome to <strong>JSONStruct</strong></h1>
+		<p>
+			JSONStruct is a small and <strong>free</strong> service designed to help you translate your JSON document into 
+			valid <a href="http://golang.org" title="The Go Programming Language">Golang</a> Struct.
+
+			<br /><br />
+			Paste or type your <strong>JSON document</strong> in the editor located at left side and hit <strong>Generate Go Struct</strong> bellow.
+		</p>
+		<br />
+		<button type="button" name="generate-struct" class="btn btn-lg btn-primary" ng-click="generateStruct()"><i class="fa fa-refresh fa-spin fade in" ng-show="isGenerating"></i> Generate Go Struct</button>
+	</aside>
+
+	<div class="col-md-6 editor-golang fade in" ng-show="dialogReady">
+		<h2>Generated JSON Struct <a href="javascript:void(0)" title="" class="btn btn-lg btn-danger" ng-click="destroyDialog()">Close Dialog</a></h2> 
+		<p>
+			Bellow you can see JSON document output as Go Struct.
+			In order to copy it you will need first to select all and than copy it yourself. <br /><br />
+			
+			OS X: `cmd+c` to copy and `cmd+v` to paste.<br />
+			Rest: `ctrl+c` to copy and `ctrl+v` to paste.
+			<br /><br />
+		</p>
+		<pre id="test"></pre>
+	</div>
+
+	<footer class="col-md-12">
+		<p>&copy; 2015 <a href="http://www.neviovesic.com">Nevio Vesic</a> <br /> Licensed under <a href="https://github.com/0x19/jsonstruct.com/blob/master/LICENSE">MIT License</a>
+	</footer>
+</main>
+[[template "footer.html" .]]
