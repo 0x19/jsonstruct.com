@@ -45,7 +45,7 @@ class EditorCtrl extends BaseCtrl
     @$scope.alertAvailable = false
 
   dialog: (generatedStruct) ->
-    document.getElementById('test').innerHTML = prettyPrintOne generatedStruct, 'lang-go', false
+    document.getElementById('generatedcode').innerHTML = prettyPrintOne generatedStruct, 'lang-go', false
     @$scope.dialogReady = true
     _editor.setReadOnly(true)
 

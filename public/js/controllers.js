@@ -73,7 +73,7 @@
     };
 
     EditorCtrl.prototype.dialog = function(generatedStruct) {
-      document.getElementById('test').innerHTML = prettyPrintOne(generatedStruct, 'lang-go', false);
+      document.getElementById('generatedcode').innerHTML = prettyPrintOne(generatedStruct, 'lang-go', false);
       this.$scope.dialogReady = true;
       return _editor.setReadOnly(true);
     };
