@@ -12,3 +12,5 @@ install:
 
 script:
   - revel test github.com/0x19/jsonstruct.com
+
+# Added comment - 
